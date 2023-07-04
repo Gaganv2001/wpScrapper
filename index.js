@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
-const port = 5000
 const cors=require("cors")
+const port=5000
 const mongoDB=require("./db")
 
 app.use(express.json())
@@ -17,6 +17,6 @@ app.use('/api/display', require("./routes/display"))
 app.use('/api/updatefav', require("./routes/updatefav"))
 app.use('/api/deletedomain', require("./routes/deletedomain"))
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Example app listening on port ${port}`)
 })
